@@ -154,7 +154,7 @@ def get_trends_data(keywords, language):
             headers = {'User-Agent': ua.random}
             logging.debug(f'Using headers: {headers}')
             pytrends = TrendReq(hl=language, tz=360, requests_args={'headers': headers})
-            pytrends.build_payload(keywords, cat=0, timeframe='today 12-m')
+            pytrends.build_payload(keywords, cat=0, timeframe='today 5-y')
             data = pytrends.interest_over_time()
             return data
         except Exception as e:
